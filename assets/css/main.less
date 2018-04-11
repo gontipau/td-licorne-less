@@ -1,0 +1,37 @@
+//Typo
+@font-size-root: 16px;
+@font-size-base: 1.125em;
+@font-family: Georgia, serif;
+@line-height: 1.5em;
+@font-size-large: 1.5em;
+
+//Couleurs
+@color-base: #556270;
+@color-background: #A2D6C1;
+
+//Structure
+@column-width: unit((96px/@font-size-root), rem);
+
+//Mixin
+.wrapper(@cols) {
+  width: @column-width * @cols;
+  padding: 1.5em @line-height;
+  margin: 0 auto 0;
+  box-sizing: border-box;
+  background-color: @color-background;
+}
+body {
+  font : @font-size-base/@line-height @font-family;
+  color: darken(@color-base, 20);
+}
+.container{
+  .wrapper(8);
+}
+@media screen and (min-width: 56rem) {
+    body {
+        font-size: @font-size-large;
+    }
+    .container{
+        .wrapper (8);
+    }
+}
